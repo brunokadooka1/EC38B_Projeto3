@@ -20,4 +20,4 @@ const MovieRoutes = require('./app/routes/MovieRoutes');
 app.use('/users', UserRoutes);
 app.use('/movies', MovieRoutes);
 
-app.listen(5000);
+app.listen(process.env.PORT || 5000);
