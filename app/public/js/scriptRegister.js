@@ -7,6 +7,7 @@ var textEmail = document.getElementById('textEmail');
 var textPassword = document.getElementById('textPassword');
 var textConfirmPassword = document.getElementById('textConfirmPassword');
 var btnNovoCadastro = document.getElementById('txtNovoCadastro');
+var admin = false;
 
 btnCancelar.addEventListener('click', function() {
   var containerLogin = document.getElementById("content-login");
@@ -27,7 +28,6 @@ btnNovoCadastro.addEventListener('click', function() {
 
 btnCadastrar.addEventListener('click', async function() {
   var admin = getPrivilegio();
-
   axios
   .post(URL_REGISTER, {
     name: textName.value,
@@ -91,4 +91,18 @@ function getPrivilegio () {
     }
   });
   return isAdmin;
+}
+
+function validacaoCampos () {
+  if (textEmail.value.indexOf("@") == -1 || textEmail.value.indexOf("@") == 0 ||
+  textEmail.value.indexOf("@") == textEmail.value.length - 1 || textEmail.value.length < 3) {
+    messageError(422, "O campo de Email é inválido <br>Preencha corretamente!");
+    return true;
+  } 
+
+  if (textPassword.value.length < 3) {
+    messageError(422, "Senha muito curta!<br>Preencha corretamente!");
+    return true;
+  }
+  return false;
 }

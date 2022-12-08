@@ -132,7 +132,7 @@ nav img {
   position: relative;
   vertical-align: middle;
   padding: 5px;
-  left: -35%;
+  left: -20%;
 }
 
 .information {
@@ -149,7 +149,7 @@ nav img {
   display: inline-block;
   padding: 5px;
   position: relative;
-  right: -35%;
+  right: -20%;
 }
 
 #btnLogout {

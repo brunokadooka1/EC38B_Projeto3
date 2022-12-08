@@ -1,9 +1,9 @@
 const URL_API_LOGIN = "https://webproject3.herokuapp.com/users/login";
 
 var btnAcessar = document.getElementById('btnAcessar');
-    messageError = document.getElementById('content-message-error');
+    contentError = document.getElementById('content-message-error');
     labelError = document.getElementById('labelError');
-    messageSuccess = document.getElementById('content-message-success');
+    contentSuccess = document.getElementById('content-message-success');
     labelSuccess = document.getElementById('labelSuccess');
     txtEmail = document.getElementById('txtEmail');
     txtSenha = document.getElementById('txtSenha');
@@ -23,23 +23,23 @@ btnAcessar.addEventListener('click', function () {
   .post(URL_API_LOGIN, { email: txtEmail.value, password: txtSenha.value})
   .then(function(response) {
     if (response.status == 200) {
-      realizaLogin (txtEmail.value, response.data.token);
+      realizaLogin (response.data);
     } 
   })
   .catch (function (error) {
-    messageError.className = "content-message-error show";
+    contentError.className = "content-message-error show";
     labelError.innerHTML = "Error " + error.response.status + ": falha ao tentar o login!!";
     txtSenha.value = '';
     txtEmail.value = '';
     setTimeout(() => {
-      messageError.className = "content-message-error"
+      contentError.className = "content-message-error"
     }, 3000);
   });
 
 });
 
 
-function realizaLogin (email, token) {
+function realizaLogin (data) {
   var containerLogin = document.getElementById("content-login");
       headerLogado = document.getElementById("header-logado");
       contentBody = document.getElementById("content-body");
@@ -55,17 +55,24 @@ function realizaLogin (email, token) {
   navegador.className = "show-false";
   formLogin.className = "show-false";
 
-  textWelcome.innerHTML = "Seja bem vindo, " + email;
+  if (data.userAdmin)
+    privilegio = "Adminstrador"
+  else 
+    privilegio = "Convidado"
+
+  welcome = "Seja bem vindo, " + data.userName + " - Privilégio: " + privilegio;
+  textWelcome.innerHTML = welcome;
 
   sessionStorage.setItem("login", 1);
-  sessionStorage.setItem("email", email);
-  sessionStorage.setItem("token", token);
+  sessionStorage.setItem("id", data.userId);
+  sessionStorage.setItem("token", data.token);
+  sessionStorage.setItem("name", data.userName);
 
-  messageSuccess.className = "content-message-success show";
+  contentSuccess.className = "content-message-success show";
   labelSuccess.innerHTML = "Login realizado com sucesso!";
 
   setTimeout(() => {
-    messageSuccess.className = "content-message-success"
+    contentSuccess.className = "content-message-success"
   }, 3000);
 
   return;
@@ -92,25 +99,32 @@ function mantenhaLogado() {
     formLogin.className = "show-false";
     containerAnuncio.className = "show-false";
     containerCarrosel.className = "show-false";
+
+
+    if (sessionStorage.getItem("token"))
+      privilegio = "Adminstrador"
+    else 
+      privilegio = "Convidado"
+
+    welcome = "Seja bem vindo, " + sessionStorage.getItem("name") + " - Privilégio: " + privilegio;
+    textWelcome.innerHTML = welcome;
   }
-  textWelcome.innerHTML = "Seja bem vindo, " + sessionStorage.getItem('email');
-  return;
 }
 
 function verificaCamposBrancos () {
   if (txtEmail.value == '') {
-    messageError.className = "content-message-error show";
+    contentError.className = "content-message-error show";
     labelError.innerHTML = "O campo de Email está em branco!";
     setTimeout(() => {
-      messageError.className = "content-message-error"
+      contentError.className = "content-message-error"
     }, 3000);
     return true;
   } 
   else if (txtSenha.value == '') {
-    messageError.className = "content-message-error show";
+    contentError.className = "content-message-error show";
     labelError.innerHTML = "O campo de Senha está em branco!";
     setTimeout(() => {
-      messageError.className = "content-message-error"
+      contentError.className = "content-message-error"
     }, 3000);
     return true;
   }
@@ -119,18 +133,18 @@ function verificaCamposBrancos () {
 
 function camposInvalidos () {
   if (txtEmail.value.length < 3) {
-    messageError.className = "content-message-error show";
+    contentError.className = "content-message-error show";
     labelError.innerHTML = "O campo de Email é inválido <br>Preencha corretamente!";
     setTimeout(() => {
-      messageError.className = "content-message-error"
+      contentError.className = "content-message-error"
     }, 3000);
     return true;
   } 
   else if (txtSenha.value.length < 3) {
-    messageError.className = "content-message-error show";
+    contentError.className = "content-message-error show";
     labelError.innerHTML = "O campo de Senha é inválido <br>Preencha corretamente!";
     setTimeout(() => {
-      messageError.className = "content-message-error"
+      contentError.className = "content-message-error"
     }, 3000);
     return true;
   }

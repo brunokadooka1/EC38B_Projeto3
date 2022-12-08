@@ -162,8 +162,9 @@ btnLogout.addEventListener('click', function () {
   }
 
   sessionStorage.removeItem('login');
-  sessionStorage.removeItem('email');
+  sessionStorage.removeItem('id');
   sessionStorage.removeItem('token');
+  sessionStorage.removeItem('name');
   
   btnAcesso.innerHTML = 'Acessar sua conta';
   return;

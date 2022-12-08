@@ -41,7 +41,7 @@ module.exports = class UserController {
       return;
     }
 
-    if (!admin) {
+    if (admin === undefined || admin === null) {
       res.status(422).json({message: 'O campo admin é obrigatório!'});
       return;
     }
