@@ -1,0 +1,267 @@
+@font-face {
+  font-family: 'InspireDisney';
+  src: url('../fonts/InspireTWDC.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1600px;
+}
+
+.centralized {
+  position: relative;
+  justify-content: space-around;
+  text-align: center;
+  display: flex;
+}
+
+nav {
+  display: block;
+}
+
+nav li {
+  list-style: none;
+  display: inline;
+  vertical-align: middle;
+}
+
+nav img {
+  padding: 15px 8px 10px 11px;
+  cursor: pointer;
+}
+
+.text-disney {
+  font-family: 'InspireDisney', 'Helvetica',sans-serif;
+  font-size: 0.9rem;
+  padding: 27px 14px 20px 23px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.text-disney:hover {
+  color: #0077DA;
+}
+
+.form-search {
+  display: block;
+  padding: 10px;
+}
+
+.text-search {
+  width: 266px;
+  height: 18px;
+  padding: 10px;
+  border: 1px solid #757575;
+  border-radius: 5px 0 0 5px;
+  border-right: 0px;
+  font-family: 'InspireDisney', 'Helvetica',sans-serif;
+  font-size: 1rem;
+  color: #757575;
+}
+
+.form-search img {
+  padding: 7px;
+  border: 1px solid #757575;
+  border-radius: 0 5px 5px 0;
+  border-left: 0;
+}
+
+/* Funções da parte mobile */
+.mobile {
+  display: none;
+}
+
+.logo-mobile img {
+  height: 40px; 
+  width: 95px;
+}
+
+.search-mobile img {
+  height: 30px;
+  width: 30px;
+  padding-left: 65px;
+}
+
+.menu-mobile {
+  padding-right: 65px;
+}
+
+.line-1 {
+  height: 2px;
+  width: 20px;
+  background-color: #000;
+}
+
+.line-2 {
+  height: 2px;
+  width: 20px;
+  background-color: #000;
+  margin-top: 4px;
+}
+
+/* A partir debaixo tudo é novo, as linhas de cima remete ao style do index.html do projeto 1
+ * Portanto tudo que for fazer e colocar em uma nova folha de estilo é copiar do hide para baixo
+ */
+
+.hide {
+  display: none;
+}
+
+/*Area Logada*/
+
+.area-logada {
+  background-color: #DDD;
+  border-bottom: 2px solid #EEE;
+  padding: 15px;
+  width: 100%;
+}
+
+.logo-area-logada {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  padding: 5px;
+  left: -35%;
+}
+
+.information {
+  display: inline-block;
+}
+
+.text-default-disney {
+  font-family: 'InspireDisney', 'Helvetica',sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.content-logout {
+  display: inline-block;
+  padding: 5px;
+  position: relative;
+  right: -35%;
+}
+
+#btnLogout {
+  width: 75px;
+  padding: 10px;
+  font-family: 'InspireDisney', 'Helvetica',sans-serif;
+  font-size: 0.9rem;
+  background-color: #AA0000;
+  color: #FFF;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#btnLogout:hover {
+  font-weight: 700;
+  box-shadow: 2px 2px #111;
+}
+
+
+@media screen and (max-width: 1000px) {
+  .logo-area-logada {
+    left: -20%;
+  }
+
+  .content-logout {
+    right: -20%;
+  }
+}
+
+.content-body {
+  padding: 30px;
+}
+
+.form-search-movie {
+  display: inline-block;
+  width: 80%;
+  padding: 20px;
+}
+
+.form-search-movie input {
+  position: relative;
+  left: 4px;
+}
+
+.form-search-movie img {
+  position: relative;
+  padding: 7px;
+  border: 1px solid #757575;
+  border-radius: 0 5px 5px 0;
+  border-left: 0;
+  vertical-align: middle;
+  top: -1px;
+}
+
+.form-text {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.form-comboBox {
+  display: inline-block;
+  position: relative;
+  left: 50%;
+}
+
+.comBox-search {
+  width: 280px;
+  padding: 9px;
+  border: 1px solid #757575;
+  border-radius: 5px 5px;
+  font-family: 'InspireDisney', 'Helvetica',sans-serif;
+  font-size: 1rem;
+  color: #757575;
+}
+
+.content-data table{
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.content-data th{
+  width: 300px;
+  padding: 5px 5px;
+  margin: 5px;
+  font-family: 'InspireDisney', 'Helvetica',sans-serif;
+  font-weight: normal;
+}
+
+.table-header th{
+  font-size: 1rem;
+  background-color: #03118f;
+  color: #fff;
+  border: 1px solid #02007d;
+  font-weight: bold;
+}
+
+#table-data tr:nth-child(even) {background-color: #DDD;}
+
+#table-data tr:hover {
+  background-color: black;
+  color: white;
+}
+
+#table-data caption {
+  text-align: left;
+  font-family: 'InspireDisney', 'Helvetica',sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding-left: 5px;
+}
+
+#btnSearch {
+  cursor: pointer;
+}

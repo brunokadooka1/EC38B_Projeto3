@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' type='text/css' media='screen' href="../css/style.css">
+  <link rel='stylesheet' type='text/css' media='screen' href="../css/styleLogin.css">
+  <link rel='stylesheet' type='text/css' media='screen' href="../css/styleLogado.css">
+  <link rel='stylesheet' type='text/css' media='screen' href="../css/styleRegister.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  <script src='../js/script.js' defer></script>
+  <script src='../js/scriptLogin.js' defer></script>
+  <script src='../js/scriptLogado.js' defer></script>
+  <script src='../js/scriptRegister.js' defer></script>
+  <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+  <title>Registro de Usuários</title>
+</head>
+<body>
+  <div class="wrapper">
+
+    <div class="content-message-success" id="content-message-success">
+      <div class="message-success">
+        <div class="icon-success"><img src="../img/success.png" alt="icone de sucesso" height="70" width="70"></div>
+        <div class="label-text-success">
+          <label id="TitleSuccess">Notificação de Sucesso:</label>
+          <label id="labelSuccess">Login feito com sucesso!</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-message-error" id="content-message-error">
+      <div class="message-error">
+        <div class="icon-error"><img src="../img/error.png" alt="icone de erro" height="70" width="70"></div>
+        <div class="label-text-error">
+          <label id="TitleError">Notificação de Erro:</label>
+          <label id="labelError">Campo em branco!</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-register">
+      <div class="form-register">
+
+        <div class="content-title">
+          <label id="labelTitle">Registro de usuários</label>
+        </div>
+
+        <div class="content-space">
+          <label id="lblName" class="label-default">Nome:</label>
+          <input type="text" class="text-default" id="textName" placeholder="Registre seu nome aqui">
+        </div>
+
+        <div class="content-space">
+          <label id="lblEmail" class="label-default">E-mail:</label>
+          <input type="text" class="text-default" id="textEmail" placeholder="Registre seu e-mail aqui">
+        </div>
+
+        <div class="content-space">
+          <label id="lblPassword" class="label-default">Senha:</label>
+          <input type="password" class="text-default" id="textPassword" placeholder="Digite uma senha">
+        </div>
+
+        <div class="content-space">
+          <label id="lblConfirmPassword" class="label-default">Confirme sua senha:</label>
+          <input type="password" class="text-default" id="textConfirmPassword" 
+          placeholder="Confirme a sua senha">
+        </div>
+
+        <div class="content-space">
+          <label class="label-default">Privilégio: </label>
+          <div class="content-radio">
+            <input type="radio"  id="optionAdmin" value="admin" name="privilegio" checked/>
+            <label class="label-default">Administrador</label>
+  
+            <input type="radio" class="desl-50"  id="optionNormal" value="normal" name="privilegio"/>
+            <label class="label-default desl-50">Normal</label>
+          </div>
+        </div>
+
+        <div class="content-space content-btn">
+          <button id="btnCancelar" class="default-btn">Cancelar</button>
+          <button id="btnCadastrar" class="default-btn">Cadastrar</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

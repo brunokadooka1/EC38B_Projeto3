@@ -1,0 +1,93 @@
+@font-face {
+  font-family: 'InspireDisney';
+  src: url('../fonts/InspireTWDC.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.content-register {
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 20px;
+}
+
+.form-register {
+  padding: 10px;
+  background-color: #DDD;
+  border: 1px solid #EEE;
+  border-radius: 5px;
+}
+
+.content-space {
+  padding: 10px 20px 30px;
+}
+
+.label-default {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.text-default {
+  font-size: 1rem;
+  display: block;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+}
+
+.content-radio {
+  padding: 15px 20px;
+}
+
+.desl-50 {
+  position: relative;
+  left: 50%;
+}
+
+.content-btn {
+  display: inline-block;
+}
+
+.default-btn {
+  padding: 20px;
+  width: 200px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  border: 2px solid #5678;
+  border-radius: 5px;
+  background-color: #4050;
+  cursor: pointer;
+}
+
+.default-btn:hover {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+#btnCancelar:hover {
+  background-color: #DD0000;
+  color: white;
+  border-color: #990000;
+  transition: background-color .5s, color 0.3s, border 0.2s;
+}
+
+#btnCadastrar {
+  position: relative;
+  left: 105%;
+}
+
+#btnCadastrar:hover {
+  background-color: #0000DD;
+  color: white;
+  border-color: #000099;
+  transition: background-color .5s, color 0.3s, border 0.2s;
+}
+
+.painel-fixed {
+  position: fixed;
+  width: 100%;
+}

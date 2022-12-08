@@ -1,0 +1,377 @@
+@font-face {
+  font-family: 'InspireDisney';
+  src: url('../fonts/InspireTWDC.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'InspireDisney', 'Helvetica',sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.show {
+  display: block;
+}
+
+.show-false {
+  display: none;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1600px;
+}
+
+.centralized {
+  position: relative;
+  justify-content: space-around;
+  text-align: center;
+  display: flex;
+}
+
+nav {
+  display: block;
+  position: relative;
+}
+
+nav li {
+  list-style: none;
+  display: inline;
+  vertical-align: middle;
+}
+
+nav img {
+  padding: 15px 8px 10px 11px;
+  cursor: pointer;
+}
+
+.text-disney {
+  font-family: 'InspireDisney', 'Helvetica',sans-serif;
+  font-size: 0.9rem;
+  padding: 27px 14px 20px 23px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.text-disney:hover {
+  color: #0077DA;
+}
+
+.form-login-header {
+  display: block;
+  padding: 10px;
+}
+
+#btnAcesso {
+  width: 200px;
+  padding: 10px;
+  font-family: 'InspireDisney', 'Helvetica',sans-serif;
+  font-size: 0.9rem;
+  background-color: #008700;
+  color: #FFF;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5%;
+}
+
+#btnAcesso:hover {
+  font-weight: 700;
+  box-shadow: 2px 2px #111;
+}
+
+/* Funções da parte mobile */
+.mobile {
+  display: none;
+}
+
+.logo-mobile img {
+  height: 40px; 
+  width: 95px;
+}
+
+.search-mobile img {
+  height: 30px;
+  width: 30px;
+  padding-left: 65px;
+}
+
+.menu-mobile {
+  padding-right: 65px;
+}
+
+.line-1 {
+  height: 2px;
+  width: 20px;
+  background-color: #000;
+}
+
+.line-2 {
+  height: 2px;
+  width: 20px;
+  background-color: #000;
+  margin-top: 4px;
+}
+
+/*Funções para o corpo da página*/
+/*Parte do anuncio*/
+.content-anuncio {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding: 20px;
+}
+
+.anuncio {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.img-anuncio {
+  height: 70px;
+  width: 80%;
+  cursor: pointer;
+}
+
+.icon-anuncio{
+  position: absolute;
+  right: 10%;
+  margin: 2px;
+  cursor: pointer;
+}
+
+/*Conteudo do carrosel travado*/
+.background-carrosel {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.groot_screen {
+  width: 100%;
+  -webkit-transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
+}
+
+.background-carrosel:hover > img {
+  -webkit-transform: scale(1.03);
+  transform: scale(1.03);
+}
+
+.content-groot {
+  position: absolute;
+  top: 17%;
+  right: 5%;
+}
+
+.text-disney-groot {
+  color: white;
+  font-family: 'InspireDisney', 'Helvetica',sans-serif;
+  font-weight: 500;
+  max-width: 450px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.form-btn {
+  padding: 5px;
+}
+
+.form-btn button {
+  margin: 12px 12px 0 12px;
+  font-family: 'InspireDisney', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 1px solid #FCF3EF;
+  border-radius: 24px;
+  padding: 16px 32px;
+  line-height: 16px;
+  height: 48px;
+  min-width: 240px;
+}
+
+#btn-1 {
+  color: #000;
+  background-color: #FCF3EF;
+}
+
+#btn-2 {
+  color: #FCF3EF;
+  background-color: transparent;
+}
+
+#btn-2:hover {
+  border-color: #1d1e1f;
+  background-color: rgba(255, 255, 255, 0.4);
+  color: white;
+}
+
+.arrow-button {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  vertical-align: middle;
+  padding-top: calc(16% + 25px);
+}
+
+.arrow-right {
+  z-index: 1;
+  position: relative;
+  left: 95%;
+  opacity: 0.3;
+  cursor: pointer;
+}
+
+.arrow-left {
+  z-index: 1;
+  position: relative;
+  left: 1%;
+  opacity: 0.3;
+  cursor: pointer;
+}
+
+.arrow-right:hover {
+  opacity: 1;
+}
+
+.arrow-left:hover {
+  opacity: 1;
+}
+
+.index-button {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  top: 97%;
+}
+
+.content-index-button {
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+}
+
+.index-1 {
+  height: 1px;
+  width: 40px;
+  background-color: #0077da;
+  padding: 1px;
+  cursor: pointer;
+}
+
+.index-2 {
+  height: 1px;
+  width: 40px;  
+  background-color: #fff;
+  padding: 1px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.index-3 {
+  height: 1px;
+  width: 40px;  
+  background-color: #fff;
+  padding: 1px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+/* Design responsivo para cada tamanho de pixel */
+@media screen and (max-width: 1330px) {
+  .med-w-1330 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1270px) {
+  .med-w-1270 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  .med-w-1110 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .med-w-950 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .med-w-850 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .mobile {
+    display: flex;
+    margin-top: 10px;
+    width: 770px;
+    justify-content: space-around;
+    align-items: center;
+    vertical-align: middle;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .form-login-header {
+    display: none;
+  }
+
+  .img-anuncio {
+    height: 45px;
+  }
+
+  .icon-anuncio {
+    height: 12px;
+    width: 12px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .background-carrosel {
+    display: block;
+    background-color: #000;
+    overflow: hidden;
+    padding-bottom: 50px;
+  }
+  
+  .content-groot {
+    position: relative;
+    left: -2%;
+  }
+
+  .index-button {
+    top: 90%;
+  }
+  
+  .text-disney-groot {
+    padding-left: 25px;
+    max-width: 400px;
+  }
+
+  .arrow-button {
+    display: none;
+  }
+
+  .content-index-button {
+    margin: 5% 32%;
+  }
+
+}

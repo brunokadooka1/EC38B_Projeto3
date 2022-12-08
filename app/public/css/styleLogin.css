@@ -1,0 +1,218 @@
+@font-face {
+  font-family: 'InspireDisney';
+  src: url('../fonts/InspireTWDC.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.content-login {
+  margin: 0 auto;
+  max-width: 1600px;
+  padding: 20px;
+  display: none;
+}
+
+.form-login {
+  margin: 0 auto;
+  width: 500px;
+  padding: 10px;
+  background-color: #DDD;
+  border: 1px solid #EEE;
+  border-radius: 10px;
+}
+
+.content-title {
+  text-align: center;
+  padding: 10px 0;
+}
+
+#labelTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.content-verification {
+  padding: 10px;
+}
+
+.form-login button {
+  padding: 5px;
+  background-color: #AAA;
+  border: 0;
+  border-radius: 3px;
+  width: 450px;
+  height: 50px;
+  margin: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.form-login button:hover {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #0077DA;
+  background-color: #CCC;
+  border: 2px solid black;
+  transition: background-color .5s, color 0.3s, border 0.2s;
+}
+
+.content-verification input {
+  display: block;
+  padding: 10px;
+  border: 0;
+  border-bottom: 2px solid #DDD;
+  background-color: initial;
+  width: 400px;
+  font-size: 1rem;
+}
+
+.input-verification {
+  padding-top: 5px;
+}
+
+.verification-email {
+  padding: 20px 0;
+}
+
+.verification-senha {
+  padding: 20px 0;
+}
+
+.content-button {
+  padding: 5px 0;
+}
+
+.novo-cadastro {
+  padding: 10px 0;
+  margin-top: 10px;
+}
+
+#txtNovoCadastro {
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#txtNovoCadastro:hover {
+  font-weight: 600;
+  color: #0077DA;
+}
+
+/*Style para messagem de erro*/
+
+.content-message-error {
+  margin: 0 auto;
+  max-width: 1600px;
+  background-color: #AAA;
+  padding: 23px;
+  border: 2px solid #BBB;
+  display: none;
+}
+
+.content-message-error::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 5px;
+  background-color: #0077DA;
+  animation: time 3s forwards;
+}
+
+.show {
+  display: block !important;
+}
+
+.message-error {
+  margin: 0 auto;
+  position: relative;
+}
+
+.icon-error {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.label-text-error {
+  display: inline-block;
+  position: absolute;
+  padding: 10px;
+}
+
+#TitleError {
+  font-size: 1.5rem;
+  color: #AC0000;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+#labelError {
+  display: block;
+  padding: 7px;
+  text-align: left;
+  color: #8A2222;
+  font-size: 1.1rem;
+}
+
+/*Mensagem de sucesso*/
+.content-message-success {
+  margin: 0 auto;
+  max-width: 1600px;
+  background-color: #AAA;
+  padding: 23px;
+  border: 2px solid #BBB;
+  display: none;
+}
+
+.content-message-success::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 5px;
+  background-color: #0077DA;
+  animation: time 3s forwards;
+}
+
+.message-success {
+  margin: 0 auto;
+  position: relative;
+}
+
+.icon-success {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.label-text-success{
+  display: inline-block;
+  position: absolute;
+  padding: 10px;
+}
+
+#TitleSuccess {
+  font-size: 1.5rem;
+  color: #008000;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+#labelSuccess {
+  display: block;
+  padding: 7px;
+  text-align: left;
+  color: #228022;
+  font-size: 1.1rem;
+}
+
+@keyframes time {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
