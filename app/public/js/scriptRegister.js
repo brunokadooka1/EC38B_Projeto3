@@ -1,4 +1,4 @@
-const URL_REGISTER = "http://localhost:5000/users/register";
+const URL_REGISTER = "https://webproject3.herokuapp.com/users/register";
 
 var btnCadastrar = document.getElementById('btnCadastrar');
 var btnCancelar = document.getElementById('btnCancelar');
@@ -6,9 +6,27 @@ var textName = document.getElementById('textName');
 var textEmail = document.getElementById('textEmail');
 var textPassword = document.getElementById('textPassword');
 var textConfirmPassword = document.getElementById('textConfirmPassword');
+var btnNovoCadastro = document.getElementById('txtNovoCadastro');
+
+btnCancelar.addEventListener('click', function() {
+  var containerLogin = document.getElementById("content-login");
+      containerRegister = document.getElementById("content-register");
+      
+  containerLogin.className = "content-login show";
+  containerRegister.className = "content-register show-false"
+});
+
+
+btnNovoCadastro.addEventListener('click', function() {
+  var containerLogin = document.getElementById("content-login");
+      containerRegister = document.getElementById("content-register");
+
+  containerLogin.className = "show-false";
+  containerRegister.className = "content-register show"
+});
 
 btnCadastrar.addEventListener('click', async function() {
-  var admin = setAdmin();
+  var admin = getPrivilegio();
 
   axios
   .post(URL_REGISTER, {
@@ -19,13 +37,22 @@ btnCadastrar.addEventListener('click', async function() {
     admin: admin
   })
   .then(function(response) {
-    
+    if (response.status == 200) {
+      var msg = "Usuário cadastrado!";
+      var status = response.status;
+      messageSuccess (status, msg);
+      textName.value = "";
+      textEmail.value = "";
+      textPassword.value = "";
+      textConfirmPassword.value = "";
+    }
   })
   .catch (function (error) {
     console.log(error);
     var status = error.response.status;
     var msg = error.response.data.message;
     messageError(status, msg);
+    document.getElementById('optionAdmin').checked = true;
   });
 
 });
@@ -55,9 +82,13 @@ function messageSuccess (status, msg) {
   }, 3000);
 }
 
-function setAdmin () {
-  if (document.getElementById('optionAdmin').checked)
-    return true;
-
-  return false;  
+function getPrivilegio () {
+  let privilegios = Array.from(document.getElementsByName('privilegio'));
+  let isAdmin = false;
+  privilegios.forEach(privilegio => {
+    if (privilegio.checked == true) {
+      isAdmin = privilegio.attributes['isadmin'].nodeValue === "true";
+    }
+  });
+  return isAdmin;
 }
