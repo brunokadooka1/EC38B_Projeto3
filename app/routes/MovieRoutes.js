@@ -4,7 +4,8 @@ const MovieController = require('../controllers/MovieContoller');
 //Middleware
 const verifyAdmin = require('../helpers/verify-admin');
 
-router.post('/create', verifyAdmin, MovieController.create);
+//router.post('/create', verifyAdmin, MovieController.create);
+router.post('/create', MovieController.create);
 router.get('/', MovieController.getAll);
 router.get('/:id', MovieController.getMovieById);
 router.get('/:name', MovieController.getMovieByName);

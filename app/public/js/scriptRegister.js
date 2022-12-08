@@ -15,6 +15,11 @@ btnCancelar.addEventListener('click', function() {
       
   containerLogin.className = "content-login show";
   containerRegister.className = "content-register show-false"
+
+  textName.value = "";
+  textEmail.value = "";
+  textPassword.value = "";
+  textConfirmPassword.value = ""; 
 });
 
 

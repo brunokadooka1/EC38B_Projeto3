@@ -2,19 +2,16 @@ const URL_API_TITLES = "https://api.watchmode.com/v1/autocomplete-search/?apiKey
 
 const URL_API_TYPES = "https://api.watchmode.com/v1/list-titles/?apiKey=JBcfxHUEcJbDdxVcgVj7MorrC9nBkOc7wCLtkFlY";
 
-var txtType = document.getElementById("comBox-search-type");
-    txtTitulo = document.getElementById("txtSearch");
-    btnSearch = document.getElementById("btnSearch");
-    table = document.getElementById("table-data");
-    btnLogout = document.getElementById("btnLogout");
+  var txtTitulo = document.getElementById("txtSearch");
+  var btnSearch = document.getElementById("btnSearch");
+  var table = document.getElementById("table-data");
+  var btnLogout = document.getElementById("btnLogout");
     
 
 /* Busca por titulo do filme, series ...*/
 btnSearch.addEventListener('click', function () {
   if (validandoBuscaTitulo ())
     return;
-
-  txtType.value = 'default';
 
   axios
   .get(URL_API_TITLES, {
@@ -27,34 +24,6 @@ btnSearch.addEventListener('click', function () {
     resetandoTable (response.data.results.length);
     response.data.results.forEach(element => {
       insereDadosTitulo(element);
-    });
-  })
-  .catch (function (error) {
-    /*Colocar no formulario de erro*/
-    let msgError = error.response.status + ": " + error.code;
-    console.log(msgError);
-    console.log(error); 
-  });
-});
-
-
-/*Busca por tipo de entretenimento*/
-txtType.addEventListener('change', function () {
-
-  if (validandoBuscaTipo())
-    return ;
-  
-  txtTitulo.value = '';
-  axios
-  .get(URL_API_TYPES, {
-      params: {
-        types: txtType.value
-      }
-  })
-  .then(function(response) {
-    resetandoTable (response.data.titles.length)
-    response.data.titles.forEach(element => {
-      insereDadosTipos(element);
     });
   })
   .catch (function (error) {

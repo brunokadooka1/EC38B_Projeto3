@@ -64,6 +64,7 @@
               <p class="text-default-disney" id="text-welcome">Seja bem vindo, Bruno ...</p>
             </div>
             <div class="content-logout">
+              <button id="btnCadastrarMovie">Cadastrar Filme</button>
               <button id="btnLogout">Logout</button>
             </div>
           </div>
@@ -218,16 +219,6 @@
           <input type="text" class="text-search" placeholder="Buscar titulo..." id="txtSearch">
           <img src="./img/search_blue.png" alt="Busca de informações" height="24" width="24" id="btnSearch">
         </div>
-        <div class="form-comboBox">
-          <select class="comBox-search" id="comBox-search-type" name="comBox-search-type">
-            <option value="default" selected>Pesquisar por:</option>
-            <option value="tv_special">Especial de TV</option>
-            <option value="movie">Filmes</option>
-            <option value="short_film">Filmes Curtos</option>
-            <option value="tv_miniseries">Miniséries</option>
-            <option value="tv_series">Series de TV</option>
-          </select>
-        </div>
       </form>
     </div>
     <div class="content-data show-false" id="content-data">
@@ -235,9 +226,9 @@
         <caption id="info-data">Dados retornados: </caption>
         <tr class="table-header">
           <th>ID/Código</th>
-          <th>Titulo da Mídia</th>
+          <th>Nome do Filme</th>
           <th>Ano de Lançamento</th>
-          <th>Tipo do Entretenimento</th>
+          <th>Gênero</th>
         </tr>
       </table>
     </div>

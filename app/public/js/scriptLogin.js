@@ -102,7 +102,7 @@ function mantenhaLogado() {
 
 
     if (sessionStorage.getItem("token"))
-      privilegio = "Adminstrador"
+      privilegio = "Administrador"
     else 
       privilegio = "Convidado"
 

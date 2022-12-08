@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' type='text/css' media='screen' href="../css/style.css">
+  <link rel='stylesheet' type='text/css' media='screen' href="../css/styleLogin.css">
+  <link rel='stylesheet' type='text/css' media='screen' href="../css/styleLogado.css">
+  <link rel='stylesheet' type='text/css' media='screen' href="../css/styleRegister.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  <script src='../js/script.js' defer></script>
+  <script src='../js/scriptLogin.js' defer></script>
+  <script src='../js/scriptLogado.js' defer></script>
+  <script src='../js/scriptRegister.js' defer></script>
+  <script src='../js/scriptCreate.js' defer></script>
+  <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+  <title>Registro de Filmes</title>
+</head>
+<body>
+  <div class="wrapper">
+
+    <div class="content-message-success" id="content-message-success">
+      <div class="message-success">
+        <div class="icon-success"><img src="../img/success.png" alt="icone de sucesso" height="70" width="70"></div>
+        <div class="label-text-success">
+          <label id="TitleSuccess">Notificação de Sucesso:</label>
+          <label id="labelSuccess">Login feito com sucesso!</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-message-error" id="content-message-error">
+      <div class="message-error">
+        <div class="icon-error"><img src="../img/error.png" alt="icone de erro" height="70" width="70"></div>
+        <div class="label-text-error">
+          <label id="TitleError">Notificação de Erro:</label>
+          <label id="labelError">Campo em branco!</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-register show">
+      <div class="form-register">
+
+        <div class="content-title">
+          <label id="labelTitle">Cadastro de Filmes</label>
+        </div>
+
+        <div class="content-space">
+          <label id="lblMovieName" class="label-default">Nome do Filme:</label>
+          <input type="text" class="text-default" id="textMovieName" placeholder="Registre o nome do filme aqui">
+        </div>
+
+        <div class="content-space">
+          <label id="lblMovieYear" class="label-default">Ano de Lançamento:</label>
+          <input type="number" class="text-default" id="textMovieYear" placeholder="Registre o ano de lançamento aqui">
+        </div>
+
+        <div class="content-space">
+          <label id="lblMovieGenre" class="label-default">Genero do Filme:</label>
+          <input type="text" class="text-default" id="textMovieGenre" placeholder="Registre o genero do filme aqui">
+        </div>
+
+
+        <div class="content-space content-btn">
+          <button id="btnCreateCancelar" class="default-btn">Cancelar</button>
+          <button id="btnCreateCadastrar" class="default-btn">Cadastrar</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
