@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href="./app/public/css/style.css">
+  <link rel='stylesheet' type='text/css' media='screen' href="./app/public/css/styleLogin.css">
+  <link rel='stylesheet' type='text/css' media='screen' href="./app/public/css/styleLogado.css">
+  <link rel='stylesheet' type='text/css' media='screen' href="./app/public/css/styleRegister.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  <script src='./app/public/js/script.js' defer></script>
+  <script src='./app/public/js/scriptLogin.js' defer></script>
+  <script src='./app/public/js/scriptLogado.js' defer></script>
+  <script src='./app/public/js/scriptRegister.js' defer></script>
+  <script src='./app/public/js/scriptCreate.js' defer></script>
+  <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+  <title>Disney Brasil | O site oficial da Disney</title>
+</head>
+<body onload="mantenhaLogado()">
+  <div class="wrapper">
+    <header>
+      <div class="centralized">
+        <nav id="nav-header">
+            <ul>
+              <li>
+                <img src="./app/public/img/logo_nav_full.png" alt="Logo da Disney" height="40" width="95">
+              </li>
+              <li class="text-disney">DISNEY+</li>
+              <li class="text-disney">SHOP</li>
+              <li class="text-disney med-w-850">NOVIDADES</li>
+              <li class="text-disney med-w-950">FILMES</li>
+              <li class="text-disney med-w-1110">DISNEY TICKETS</li>
+              <li class="text-disney med-w-1270">MARVEL INSIDER</li>
+              <li class="text-disney med-w-1330">TV</li>
+              <li class="text-disney">MAIS</li>
+            </ul>
+        </nav>
+        <div class="form-login-header" id="form-login-header">
+          <div class="centralized">
+            <button class="btnAcesso" id="btnAcesso">Acessar sua conta</button>
+          </div>
+        </div>
+        <div class="mobile">
+          <div class="menu-mobile">
+            <div class="line-1"></div>
+            <div class="line-2"></div>
+          </div>
+          <div class="logo-mobile">
+            <img src="./app/public/img/logo_nav_full.png" alt="Logo da Disney">
+          </div>
+          <div class="search-mobile">
+            <img src="./app/public/img/search_black.png" alt="Logo da Disney">
+          </div>
+        </div>
+
+        <!--Area logada no header-->
+
+        <div class="area-logada show-false" id="header-logado">
+          <div class="content-area-logada">
+            <div class="logo-area-logada">
+              <img src="./app/public/img/logo_nav_full.png" alt="Logo da Disney" height="40" width="95">
+            </div>
+            <div class="information">
+              <p class="text-default-disney" id="text-welcome">Seja bem vindo, Bruno ...</p>
+            </div>
+            <div class="content-logout">
+              <button id="btnCadastrarMovie">Cadastrar Filme</button>
+              <button id="btnLogout">Logout</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Area de Mensagens -->
+
+    <div class="content-message-success" id="content-message-success">
+      <div class="message-success">
+        <div class="icon-success"><img src="./app/public/img/success.png" alt="icone de sucesso" height="70" width="70"></div>
+        <div class="label-text-success">
+          <label id="TitleSuccess">Notificação de Sucesso:</label>
+          <label id="labelSuccess">Login feito com sucesso!</label>
+        </div>
+      </div>
+    </div>
+      
+    <div class="content-message-error" id="content-message-error">
+      <div class="message-error">
+        <div class="icon-error"><img src="./app/public/img/error.png" alt="icone de erro" height="70" width="70"></div>
+        <div class="label-text-error">
+          <label id="TitleError">Notificação de Erro:</label>
+          <label id="labelError">Campo em branco!</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Area de Body da pagina inicial -->
+
+    <section class="content-anuncio" id="content-anuncio">
+      <div class="anuncio">
+        <img class="img-anuncio" src="./app/public/img/anuncio.jfif" alt="Anuncio da Disney">
+        <div><img class="icon-anuncio" src="./app/public/img/icon_anuncio.png" alt="fechar anuncio"></div>
+      </div>
+    </section>
+    <main>
+      <div class="background-carrosel" id="background-carrosel">
+        <img class="groot_screen" src="./app/public/img/groot_screen.png">
+        <div class="content-groot">
+          <div class="centralized imgroot"><img src="./app/public/img/imgroot.png" alt="Eu sou groot" height="150" width="250"></div>
+          <div class="centralized">
+            <p class="text-disney-groot centralized">Descubra cinco novas aventuras que farão você dizer "Eu Sou Groot". A coleção de 5 curtas-metragens originais dos Estúdios Marvel já estão disponíveis no Disney+.</p>
+          </div>
+          <div class="form-btn">
+            <div class="centralized btn-1"><button id="btn-1">Ver agora</button></div>
+            <div class="centralized"><button id="btn-2">Saiba mais</button></div>
+          </div>
+        </div>
+        <div class="arrow-button">
+          <div class="arrow-left"><img src="./app/public/img/arrow_left.png" alt="arrow left"></div>
+          <div class="arrow-right"><img src="./app/public/img/arrow_rigth.png" alt="arrow right"></div>
+        </div>
+        <div class="index-button">
+          <div class="content-index-button centralized">
+            <div class="index-1"></div>
+            <div class="index-2"></div>
+            <div class="index-3"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Area de Login -->
+
+    <div class="content-login" id="content-login">
+      <div class="form-login">
+        <div class="content-title">
+          <label id="labelTitle">Login</label>
+        </div>
+        <div class="content-verification">
+          <div class="verification-email">
+            <label id="labelEmail" class="form-label">Email:</label>
+            <div class="input-verification">
+              <input type="text" placeholder="Digite seu email" id="txtEmail">
+            </div>
+          </div>
+          <div class="verification-senha">
+            <label id="labelSenha" class="form-label">Senha:</label>
+            <div class="input-verification">
+              <input type="password" placeholder="Digite sua senha" id="txtSenha">
+            </div>
+          </div>
+          <div class="content-button">
+            <div class="button-acesso"><button id="btnAcessar">Acessar</button></div>
+              <div class="novo-cadastro">
+                <label id="txtNovoCadastro">Seu primeiro acesso?</label>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Area de Registro de Usuários -->
+    <div class="content-register" id="content-register">
+      <div class="form-register">
+
+        <div class="content-title">
+          <label id="labelTitle">Registro de usuários</label>
+        </div>
+
+        <div class="content-space">
+          <label id="lblName" class="label-default">Nome:</label>
+          <input type="text" class="text-default" id="textName" placeholder="Registre seu nome aqui">
+        </div>
+
+        <div class="content-space">
+          <label id="lblEmail" class="label-default">E-mail:</label>
+          <input type="text" class="text-default" id="textEmail" placeholder="Registre seu e-mail aqui">
+        </div>
+
+        <div class="content-space">
+          <label id="lblPassword" class="label-default">Senha:</label>
+          <input type="password" class="text-default" id="textPassword" placeholder="Digite uma senha">
+        </div>
+
+        <div class="content-space">
+          <label id="lblConfirmPassword" class="label-default">Confirme sua senha:</label>
+          <input type="password" class="text-default" id="textConfirmPassword" 
+          placeholder="Confirme a sua senha">
+        </div>
+
+        <div class="content-space">
+          <label class="label-default">Privilégio: </label>
+          <div class="content-radio">
+            <input type="radio"  id="optionAdmin" value="admin" name="privilegio" isadmin="true" checked/>
+            <label class="label-default">Administrador</label>
+  
+            <input type="radio" class="desl-50"  id="optionNormal" value="normal" isadmin="false" name="privilegio"/>
+            <label class="label-default desl-50">Normal</label>
+
+          </div>
+        </div>
+
+        <div class="content-space content-btn">
+          <button id="btnCancelar" class="default-btn">Cancelar</button>
+          <button id="btnCadastrar" class="default-btn">Cadastrar</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Area de Logada -->
+
+    <div class="content-body text-default-disney show-false" id="content-body">
+      <div>
+        <h1>Busca de Entretenimento</h1>
+      </div>
+      <form class="form-search-movie">
+        <div class="form-text">
+          <input type="text" class="text-search" placeholder="Buscar titulo..." id="txtSearch">
+          <img src="./app/public/img/search_blue.png" alt="Busca de informações" height="24" width="24" id="btnSearch">
+        </div>
+      </form>
+    </div>
+    <div class="content-data show-false" id="content-data">
+      <table id="table-data">
+        <caption id="info-data">Dados retornados: </caption>
+        <tr class="table-header">
+          <th>ID/Código</th>
+          <th>Nome do Filme</th>
+          <th>Ano de Lançamento</th>
+          <th>Gênero</th>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Create -->
+
+    <div class="content-create">
+      <div class="form-create">
+        <div class="content-title">
+          <label id="labelTitle">Cadastro de Filmes</label>
+        </div>
+
+        <div class="content-space">
+          <label id="lblMovieName" class="label-default">Nome do Filme:</label>
+          <input type="text" class="text-default" id="textMovieName" placeholder="Registre o nome do filme aqui">
+        </div>
+
+        <div class="content-space">
+          <label id="lblMovieYear" class="label-default">Ano de Lançamento:</label>
+          <input type="number" class="text-default" id="textMovieYear" placeholder="Registre o ano de lançamento aqui">
+        </div>
+
+        <div class="content-space">
+          <label id="lblMovieGenre" class="label-default">Genero do Filme:</label>
+          <input type="text" class="text-default" id="textMovieGenre" placeholder="Registre o genero do filme aqui">
+        </div>
+
+
+        <div class="content-space content-btn">
+          <button id="btnCreateCancelar" class="default-btn">Cancelar</button>
+          <button id="btnCreateCadastrar" class="default-btn">Cadastrar</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
