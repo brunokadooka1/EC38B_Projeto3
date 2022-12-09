@@ -124,6 +124,10 @@
   display: block !important;
 }
 
+.show-inline-block {
+  display: inline-block !important;
+}
+
 .message-error {
   margin: 0 auto;
   position: relative;

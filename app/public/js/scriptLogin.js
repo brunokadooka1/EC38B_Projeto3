@@ -8,6 +8,7 @@ var btnAcessar = document.getElementById('btnAcessar');
     txtEmail = document.getElementById('txtEmail');
     txtSenha = document.getElementById('txtSenha');
     textWelcome = document.getElementById("text-welcome");
+var btnCadastrarMovie = document.getElementById("btnCadastrarMovie");
 
 
 btnAcessar.addEventListener('click', function () {
@@ -56,7 +57,7 @@ function realizaLogin (data) {
   formLogin.className = "show-false";
 
   if (data.userAdmin)
-    privilegio = "Adminstrador"
+    privilegio = "Administrador"
   else 
     privilegio = "Convidado"
 
@@ -67,6 +68,7 @@ function realizaLogin (data) {
   sessionStorage.setItem("id", data.userId);
   sessionStorage.setItem("token", data.token);
   sessionStorage.setItem("name", data.userName);
+  sessionStorage.setItem("admin", data.userAdmin);
 
   contentSuccess.className = "content-message-success show";
   labelSuccess.innerHTML = "Login realizado com sucesso!";
@@ -74,6 +76,11 @@ function realizaLogin (data) {
   setTimeout(() => {
     contentSuccess.className = "content-message-success"
   }, 3000);
+
+  if (sessionStorage.getItem("admin") === 'true')
+    btnCadastrarMovie.className = "show-inline-block"
+  else
+    btnCadastrarMovie.className = "show-false"
 
   return;
 }
@@ -108,6 +115,12 @@ function mantenhaLogado() {
 
     welcome = "Seja bem vindo, " + sessionStorage.getItem("name") + " - Privilégio: " + privilegio;
     textWelcome.innerHTML = welcome;
+
+    if (sessionStorage.getItem("admin") === 'true')
+      btnCadastrarMovie.className = "show-inline-block"
+    else
+      btnCadastrarMovie.className = "show-false"
+
   }
 }
 

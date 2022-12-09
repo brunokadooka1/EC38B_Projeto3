@@ -12,7 +12,21 @@
   display: none;
 }
 
+.content-create {
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 20px;
+  display: none;
+}
+
 .form-register {
+  padding: 10px;
+  background-color: #DDD;
+  border: 1px solid #EEE;
+  border-radius: 5px;
+}
+
+.form-create { 
   padding: 10px;
   background-color: #DDD;
   border: 1px solid #EEE;

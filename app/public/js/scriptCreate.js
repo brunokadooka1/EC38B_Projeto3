@@ -5,6 +5,7 @@ var txtMovieYear = document.getElementById("textMovieYear");
 var txtMovieGenre = document.getElementById("textMovieGenre");
 var btnCreate = document.getElementById("btnCreateCadastrar");
 var btnCancelCreate = document.getElementById("btnCreateCancelar");
+var btnCreateMovie = document.getElementById("btnCadastrarMovie");
 
 btnCreate.addEventListener('click', () => {
   axios
@@ -28,6 +29,5 @@ btnCreate.addEventListener('click', () => {
     var status = error.response.status;
     var msg = error.response.data.message;
     messageError(status, msg);
-    document.getElementById('optionAdmin').checked = true;
   });
 });
